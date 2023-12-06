@@ -1,0 +1,36 @@
+.popup {
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 300px;
+  background-color: #997950;
+  background-image: url(https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/popup.jpg?v=1682376949578);
+  background-repeat: repeat;
+  border: 1px solid black;
+  padding: 20px;
+}
+
+/* Style for the close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+#museum{
+  width: 200px;
+  float: left;
+  margin-right: 20px;
+}
+
+#welcome{
+  font-family: 'Poltawski Nowy', serif;
+}
+
+#header{
+  margin-top: 5px;
+}
