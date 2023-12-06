@@ -6,6 +6,6 @@ Interactive workshop and lessons for learning A-Frame and WebVR. [See the School
 
 Click and drag on desktop. Open it on a smartphone and use the device motion sensors. Or [plug in a VR headset](https://webvr.rocks)!
 
-#Live Site for VR Museum:
+### Live Site for VR Museum:
 
 https://adamadl-museumofnationalhistory.glitch.me/
