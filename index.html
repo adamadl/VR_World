@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Textures - A-Frame School</title>
+    <meta name="description" content="Textures - A-Frame School">
+    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poltawski+Nowy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="podium.css">
+  </head>
+  <body>
+    <script>
+      AFRAME.registerComponent('cursor-listener', {
+        init: function () {
+          this.el.addEventListener('click', function (evt) {
+            // Show the pop-up window
+            var popup = document.createElement('div');
+            popup.classList.add('popup');
+            popup.innerHTML = 
+              '<span class="close">&times;</span>';
+            var additionalCode = document.getElementById('additional-code').innerHTML;
+            popup.innerHTML += additionalCode;
+            
+            document.body.appendChild(popup);
+
+            // Add a click event listener to the close button to remove the pop-up window
+            var close = popup.querySelector('.close');
+            close.addEventListener('click', function () {
+              popup.remove();
+            });
+          });
+        }
+      });
+    </script>
+    <!-- HTML code -->
+    <div id="additional-code" style="display: none;">
+  <!-- Additional HTML code here -->
+      <h3 id="header">Welcome to the Museum of National Treasures</h3>
+      <p id="welcome">
+        We invite you to explore a virtual world like not other! Our museum is dedicated to showcasing the stunning 3D creations of talented artists, highlighting the incredible potential of virtual reality.
+        <br>
+        <br>
+        As you wander through our exhibitions, you'll encounter a breathtaking array of immersive experiences, from fantastical landscapes to intricate architectural marvels.
+        <br>
+        <br>
+        We are thrilled to have you here and can't wait to share our treasures with you. So sit back, relax, and prepare to be amazed at the Museum of National Treasures!
+      </p>
+    </div>
+    <a-scene>
+<!--       <a-assets>
+        <a-asset-item id="statue" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/scene.gltf?v=1681795154725">
+        </a-asset-item>
+      </a-assets>
+      
+      <a-plane color="#7BC8A4" rotation="-90 0 0" width="100" height="100"></a-plane>
+      <a-obj-model src="#statue" scale="0 0 0" position="0 0 0"></a-obj-model>
+       <a-entity camera="active: true" look-controls wasd-controls position="0 10 0" data-aframe-default-camera></a-entity> -->
+      <a-assets>
+        <a-asset-item id="door" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/door.dae.obj?v=1681852227370">
+        </a-asset-item>
+        <a-asset-item id="podium" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/model.dae%20(2).obj?v=1681802144617">
+        </a-asset-item>
+        <a-asset-item id="book" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/book1.dae.obj?v=1681853829655">
+        </a-asset-item>
+        <a-asset-item id="arch" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/gothicArch.obj?v=1681837460815">
+        </a-asset-item>
+        <a-asset-item id="painting1" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/painting1.dae.obj?v=1682003180014">
+        </a-asset-item>
+        <a-asset-item id="painting2" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/painting2.dae.obj?v=1682003204845">
+        </a-asset-item>
+        <a-asset-item id="statue2" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/horse5.obj?v=1682396476972">
+        </a-asset-item>
+<!--         <a-asset-item id="statue3" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/statueGirlPuteaux3.obj?v=1682397299308">
+        </a-asset-item>
+        <a-asset-item id="statue4" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/elf.OBJ?v=1682398113773">
+        </a-asset-item>
+        <a-asset-item id="statue5" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/model.dae%20(4).obj?v=1682399177911">
+        </a-asset-item> -->
+        <a-asset-item id="statue6" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/Statue20K.obj?v=1682401286517">
+        </a-asset-item>
+        <a-asset-item id="statue7" src="https://cdn.glitch.me/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/model.obj?v=1682401857891">
+        </a-asset-item>
+        <a-asset-item id="statue8" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/vierge2.obj?v=1682442545991">
+        </a-asset-item>
+        <a-asset-item id="statue9" src="https://cdn.glitch.me/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/Ram%20of%20Amun.obj?v=1682443818732">
+        </a-asset-item>
+        <a-asset-item id="statue10" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/goblin.obj?v=1682444342876">
+        </a-asset-item>
+        <a-asset-item id="statue11" src="https://cdn.glitch.me/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/31.obj?v=1682449294545">
+        </a-asset-item>
+        <a-asset-item id="statue12" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/wall.obj?v=1682450301721">
+        </a-asset-item>
+        <a-asset-item id="statue13" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/Diane%20a%20la%20biche_full.obj?v=1682451250399">
+        </a-asset-item>
+        <img id="wood" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/wood.jpg?v=1681802753926">
+        <img id="carpet" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/red%20carpet.jpg?v=1681829890299">
+        <img id="cover" src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/book%20front%20cover.jpg?v=1681854215990">
+      </a-assets>
+      <a-entity camera="active: true" look-controls wasd-controls position="0 2.235 -3.696" rotation="0 180 0" data-aframe-default-camera>
+        <a-entity cursor="fuse: false"
+            position="0 0 -1"
+            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+            material="color: black; shader: flat">
+        </a-entity>
+      </a-entity>
+      
+      <a-sky src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/sky.jpg?v=1682456125533"></a-sky>
+      
+<!--       <a-sky src="https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/52606033769_ff52679d69_k.jpg?v=1681796979608"></a-sky>
+       -->
+      
+<!--       <a-obj-model src="#tree" position="0 0 0" scale=".25 .25 .25"></a-obj-model> -->
+      
+<!--       <a-obj-model src="#tree" position="-5 0 -20" scale=".5 .5 .5"></a-obj-model> -->
+
+<!--       <a-plane src="https://cdn.glitch.com/b870d9ec-1139-44f9-b462-223e4a2c74e7%2Ftexture.jpg?v=1490308149272" rotation="-90 0 0" height="100" width="100"></a-plane> -->
+
+      <a-plane material="src: #carpet" rotation="-90 0 0" width="10" height="10"></a-plane>
+      <a-plane material="src: #carpet" rotation="-90 0 0" width="10" height="10" position="9.933 0 0"></a-plane>
+      <a-plane material="src: #carpet" rotation="-90 0 0" width="10" height="10" position="-9.933 0 0"></a-plane>
+      <a-plane material="src: #wood" rotation="90 0 0" width="10" height="10" position="0 5 0"></a-plane>
+      <a-plane material="src: #wood" rotation="90 0 0" width="10" height="10" position="9.933 5.274 0"></a-plane>
+      <a-plane material="src: #wood" rotation="90 0 0" width="10" height="10" position="-9.933 5.274 0"></a-plane>
+  
+      
+      <a-box position="-5 2.5 -3.029" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      <a-box position="-5 6.134 -2.785" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      <a-box position="-5 6.405 2.771" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      <a-box position="-5 6.739 0.115" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      <a-box position="-5 2.5 3.09" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      
+      <a-box position="5 2.5 -3.029" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      <a-box position="5 6.134 -2.785" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      <a-box position="5 6.405 2.771" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      <a-box position="5 6.739 0.115" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      <a-box position="5 2.5 3.09" width="0.1" height="5" scale="1 1 0.39" depth="10" material="src: #wood"></a-box>
+      
+      <a-box position="0 2.5 -5" width="10" height="5" depth=".1" material="src: #wood"></a-box>
+      <a-box position="0 2.5 5" width="10" height="5" depth=".1" material="src: #wood"></a-box>
+      
+      <a-box position="-15.101 2.5 .008" width=".1" height="5" depth="10" scale="1 1.19 1.58" material="src: #wood"></a-box>
+      <a-box position="15.101 2.5 .008" width=".1" height="5" depth="10" scale="1 1.19 1.58" material="src: #wood"></a-box>
+      
+     <a-entity position="0 0 0"> 
+        <!-- Back of the case -->
+       <a-box width="1" height="1" depth="0.1" position="10.125 0.508 7.965" scale="9.5 10 1" material="src: #wood"></a-box> 
+              <!-- Left side of the case -->
+       <a-box width="0.1" height="1" depth="1" position="5.207 0.508 5.458" scale="5 10 5" material="src: #wood"></a-box> 
+              <!-- Right side of the case -->
+       <a-box width="0.1" height="1" depth="1" position="14.859 0.508 5.458" scale="5 10 5" material="src: #wood"></a-box> 
+            <!-- Top of the case -->
+       <a-box width="1" height="0.1" depth="1" position="10.082 5.274 5.458" scale="10 5 5" material="src: #wood"></a-box> 
+              <!-- Bottom of the case -->
+       <a-box width="1" height="0.1" depth="1" position="10 .109 5.458" scale="10 5 5" material="src: #wood"></a-box> 
+              <!-- Front of the case with transparent material applied to the glass side -->
+       <a-box width="1" height="1" depth="0.1" position="9.887 0.508 3.460" scale="9.5 10 1" material="transparent: true; opacity: 0.7;"></a-box>
+      </a-entity> 
+      
+      <a-entity position="0 0 0"> 
+        <!-- Back of the case -->
+       <a-box width="1" height="1" depth="0.1" position="10.125 0.508 -7.965" scale="9.5 10 1" material="src: #wood"></a-box> 
+              <!-- Left side of the case -->
+       <a-box width="0.1" height="1" depth="1" position="5.207 0.508 -5.458" scale="5 10 5" material="src: #wood"></a-box> 
+              <!-- Right side of the case -->
+       <a-box width="0.1" height="1" depth="1" position="14.859 0.508 -5.458" scale="5 10 5" material="src: #wood"></a-box> 
+            <!-- Top of the case -->
+       <a-box width="1" height="0.1" depth="1" position="10 5.274 -5.458" scale="10 5 5" material="src: #wood"></a-box> 
+              <!-- Bottom of the case -->
+       <a-box width="1" height="0.1" depth="1" position="10 .109 -5.458" scale="10 5 5" material="src: #wood"></a-box> 
+              <!-- Front of the case with transparent material applied to the glass side -->
+       <a-box width="1" height="1" depth="0.1" position="9.887 0.508 -3.460" scale="9.5 10 1" material="transparent: true; opacity: 0.7;"></a-box>
+      </a-entity>
+      
+      <a-entity position="0 0 0"> 
+        <!-- Back of the case -->
+       <a-box width="1" height="1" depth="0.1" position="-10.125 0.508 -7.965" scale="9.5 10 1" material="src: #wood"></a-box> 
+              <!-- Left side of the case -->
+       <a-box width="0.1" height="1" depth="1" position="-5.207 0.508 -5.458" scale="5 10 5" material="src: #wood"></a-box> 
+              <!-- Right side of the case -->
+       <a-box width="0.1" height="1" depth="1" position="-14.859 0.508 -5.458" scale="5 10 5" material="src: #wood"></a-box> 
+            <!-- Top of the case -->
+       <a-box width="1" height="0.1" depth="1" position="-10 5.274 -5.458" scale="10 5 5" material="src: #wood"></a-box> 
+              <!-- Bottom of the case -->
+       <a-box width="1" height="0.1" depth="1" position="-10 .109 -5.458" scale="10 5 5" material="src: #wood"></a-box> 
+              <!-- Front of the case with transparent material applied to the glass side -->
+       <a-box width="1" height="1" depth="0.1" position="-9.887 0.508 -3.460" scale="9.5 10 1" material="transparent: true; opacity: 0.7;"></a-box>
+      </a-entity>
+      
+      <a-entity position="0 0 0"> 
+        <!-- Back of the case -->
+       <a-box width="1" height="1" depth="0.1" position="-10.125 0.508 7.965" scale="9.5 10 1" material="src: #wood"></a-box> 
+              <!-- Left side of the case -->
+       <a-box width="0.1" height="1" depth="1" position="-5.207 0.508 5.458" scale="5 10 5" material="src: #wood"></a-box> 
+              <!-- Right side of the case -->
+       <a-box width="0.1" height="1" depth="1" position="-14.859 0.508 5.458" scale="5 10 5" material="src: #wood"></a-box> 
+            <!-- Top of the case -->
+       <a-box width="1" height="0.1" depth="1" position="-10 5.274 5.458" scale="10 5 5" material="src: #wood"></a-box> 
+              <!-- Bottom of the case -->
+       <a-box width="1" height="0.1" depth="1" position="-10 .109 5.458" scale="10 5 5" material="src: #wood"></a-box> 
+              <!-- Front of the case with transparent material applied to the glass side -->
+       <a-box width="1" height="1" depth="0.1" position="-9.887 0.508 3.460" scale="9.5 10 1" material="transparent: true; opacity: 0.7;"></a-box>
+      </a-entity>
+      
+  
+<!--       <a-plane color="#3A1E08" width="6" height="4" rotation="180 0 0" position="-0.055 0.791 2.435" scale="0.14 0.14 1"></a-plane>
+      <a-text value="Click on \n the book" color="#FFF" width="5" position="-0.055 0.791 2.435" rotation="180 0 180" align="center" wrap-count="50" font=""></a-text> -->
+      
+      <a-obj-model src="#door" position="-1.819 0 -4.791" scale=".05 .05 .05" material="shader:flat; src: #wood"></a-obj-model>
+      <a-obj-model src="#podium" position="-0.495 -0.065 3.033" scale=".04 .04 .04" material="shader:flat; src: #wood"></a-obj-model>
+      
+      <a-obj-model id="book-model" src="#book" position="0.123 1.657 2.315" scale=".03 .03 .03" rotation="260 0 180" material="shader:flat; src: #cover" cursor-listener></a-obj-model>
+      
+      <a-obj-model src="#painting1" position="4.774 2.169 3.159" rotation="0 90 0" scale=".03 .03 .03" material="shader:flat; src: https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/painting_node_152476_stats.jpg?v=1682004473641"></a-obj-model>
+      <a-obj-model src="#painting2" position="-4.694 3 3.267"  rotation="0 90 0" scale=".04 .04 .04" material="shader:flat; src: https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/dust-over-old-mine-site_4K.jpg?v=1682004471060"></a-obj-model>
+      
+<!--       <a-obj-model src="#statue1" id="dolphin" position="-12.651 1.6 5.041"  rotation="0 0 0" scale="1 1 1" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/marcel-strauss-2GfU3qlLe2M-unsplash.jpg?v=1682042086791"></a-obj-model> -->
+      <a-obj-model src="#statue2" id="horse" position="13.178 .601 -5.624"  rotation="270 0 0" scale="4.5 4.5 4.5" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/horse5_material_1.png?v=1682396762398"></a-obj-model>
+<!--       <a-obj-model src="#statue3" id="lady" position="10.118 3.021 5.607"  rotation="270 270 0" scale=".15 .15 .15" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/Model_0.jpg?v=1682397653538"></a-obj-model> -->
+<!--       <a-obj-model src="#statue4" id="archer" position="12.651 3.268 5.607"  rotation="0 180 0" scale=".25 .25 .25" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/Model_0.jpg?v=1682397653538"></a-obj-model> -->
+<!--       <a-obj-model src="#statue5" id="archer" position="12.651 2 4.6"  rotation="0 180 0" scale="1 1 1" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/principledshader_roughness.jpeg?v=1682399538076"></a-obj-model> -->
+      <a-obj-model src="#statue6" id="lady" position="7.265 .6 -4.761"  rotation="270 180 0" scale=".1 .1 .1" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/Statue20K_Material.1001_albedo.jpg?v=1682401622396"></a-obj-model>
+      <a-obj-model src="#statue7" id="chariot" position="12.944 -2.950 3.791"  rotation="0 90 0" scale="4.5 4.5 4.5" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/tex_u1_v1_diffuse.jpeg?v=1682434625985"></a-obj-model>
+      <a-obj-model src="#statue8" id="dragon" position="9.869 2.614 -6.712"  rotation="0 0 0" scale="3.5 3.5 3.5" material="shader:flat; src:https://cdn.glitch.me/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/vierge2_material_1.png?v=1682442914400"></a-obj-model>
+      <a-obj-model src="#statue9" id="ram" position="-12.999 1.672 -5.777"  rotation="0 0 0" scale="1 1 1" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/sphinx_v3.jpg?v=1682444122675"></a-obj-model>
+      <a-obj-model src="#statue10" id="goblin" position="-10.006 1.349 -5.444"  rotation="0 0 0" scale="1 1 1" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/main_albedo.jpg?v=1682449896840"></a-obj-model>
+      <a-obj-model src="#statue11" id="statue" position="-7.238 2.616 -6.030"  rotation="180 50 0" scale="2 2 2" material="shader:flat; src:https://cdn.glitch.me/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/31_material_1.png?v=1682449573647"></a-obj-model>
+      <a-obj-model src="#statue12" id="wall" position="-7.238 2.458 5.201"  rotation="0 180 0" scale="2 2 2" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/low_albedo.jpeg?v=1682450536177"></a-obj-model>
+      <a-obj-model src="#statue13" id="woman" position="-13.215 0.16 6.131"  rotation="0 180 0" scale=".13 .13 .13" material="shader:flat; src:https://cdn.glitch.global/ac1b912f-c853-4c60-a44b-c7e6126fc2d1/Diane___la_biche_LOD0_u0_v0.jpeg?v=1682451561273"></a-obj-model>
+  
+    
+      <a-obj-model src="#arch" position="-4.947 0 0" scale=".004 .003 .003" rotation="0 90 0" material="src: #wood"></a-obj-model>
+      <a-obj-model src="#arch" position="4.947 0 0" scale=".004 .003 .003" rotation="0 90 0" material="src: #wood"></a-obj-model>
+    </a-scene>
+  </body>
+</html>
